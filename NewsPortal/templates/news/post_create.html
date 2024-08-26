@@ -1,0 +1,16 @@
+{% extends 'news/header.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %} New post {% endblock %}
+
+{% block body %}
+<div class="content" style="margin-left: 20px;">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save" />
+        </form>
+
+</div>
+{% endblock %}

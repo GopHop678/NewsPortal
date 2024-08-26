@@ -1,0 +1,55 @@
+body{
+background: grey;
+margin: 0;
+}
+
+.menu_block{
+background: orange;
+min-height: 50px;
+overflow: hidden;
+}
+
+.menu_buttons_list{
+    margin: 0;
+    padding: 7px;
+
+    li{
+        display: inline-block;
+        border: 2px solid grey;
+        border-radius: 15px;
+
+        a {
+            display: inline-block;
+            text-align: center;
+            font-size: 20px;
+            width: 180px;
+            color: black;
+            text-decoration: none;
+            padding: 5px;
+            font-family: sans-serif;
+        }
+    }
+
+    .sign-up, .sign-in{
+    margin-left: 5px;
+        position:relative;
+        float:right;
+
+        a {
+            width: 100px;
+        }
+    }
+}
+
+.posts {
+    text-decoration: none;
+    color: blue;
+    li {
+        list-style-type: none;
+    }
+}
+
+.posts:hover {
+    color: red;
+    text-decoration: underline;
+}

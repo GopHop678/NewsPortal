@@ -1,0 +1,15 @@
+{% extends 'news/header.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %} Регистрация нового пользователя {% endblock %}
+
+{% block body %}
+<div class="content" style="margin-left: 20px;">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Sing up">
+    </form>
+</div>
+{% endblock %}

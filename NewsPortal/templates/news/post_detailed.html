@@ -1,0 +1,25 @@
+{% extends 'news/header.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+{% block title %} Post page {% endblock %}
+
+{% block body %}
+{% if perms.post.change_post %}
+    <div>
+        <a href="{{ post.id }}/edit">Редактировать</a>
+        <a href="{{ post.id }}/delete">Удалить</a>
+    </div><hr>
+{% endif %}
+
+<div class="content" style="margin-left: 20px;">
+    <h1>
+        Published: {{ post.add_date|date:"d.m.Y" }}
+        <br>
+        {{ post.title }}
+        <br>
+        {{ post.content|censor }}
+    </h1>
+</div>
+{% endblock %}

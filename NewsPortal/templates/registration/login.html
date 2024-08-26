@@ -1,0 +1,16 @@
+{% extends 'news/header.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %} Ошибка 403 {% endblock %}
+
+{% block body %}
+<div class="content" style="margin-left: 20px;">
+    <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+</form>
+</div>
+{% endblock %}
