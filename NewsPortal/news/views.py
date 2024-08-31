@@ -8,6 +8,7 @@ from django.db.models import Exists, OuterRef
 from .models import Post, Subscription, Category
 from .filters import PostFilter
 from .forms import PostForm
+from .tasks import *
 
 
 class PostList(ListView):
@@ -95,14 +96,11 @@ def subscriptions(request):
             )
         )
     ).order_by('category')
-    return render(
-        request,
-        'news/subscriptions.html',
-        {'categories': categories_with_subscriptions},
-    )
+    return render(request, 'news/subscriptions.html', {'categories': categories_with_subscriptions},)
 
 
 def index(request):
+    # send_notifies.delay()
     return render(request, 'news/index.html')
 
 

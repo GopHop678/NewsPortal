@@ -6,7 +6,7 @@ from django.db import transaction
 from .models import Subscription, PostCategory
 
 
-@receiver(m2m_changed, sender=PostCategory)
+# @receiver(m2m_changed, sender=PostCategory)
 def post_created(instance, action, **kwargs):
     if action == 'post_add':
         latest_post = PostCategory.objects.filter(post_id=instance.id)
