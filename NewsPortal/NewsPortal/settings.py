@@ -185,21 +185,96 @@ ADMINS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
+
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['console'] if DEBUG else ['general'],
             'level': 'INFO',
         },
         'news': {
-            'handlers': ['console'],
+            'handlers': ['console'] if DEBUG else ['general'],
             'level': 'INFO',
         },
+        'django.request': {
+            'handlers': ['console'] if DEBUG else ['error', 'email'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['console'] if DEBUG else ['error', 'email'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['error'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['error'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['security'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
     },
+
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'debug',
+            'level': 'DEBUG',
+        },
+        'general': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'general.log',
+            'formatter': 'info',
+            'level': 'INFO',
+        },
+        'error': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'errors.log',
+            'formatter': 'error',
+            'level': 'ERROR',
+        },
+        'security': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'security.log',
+            'formatter': 'debug',
+            'level': 'DEBUG',
+        },
+        'email': {
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'email',
+            'level': 'ERROR',
+        },
+    },
+
+    'formatters': {
+            'verbose': {
+                'format': '{asctime} {levelname} {message}',
+                'style': '{',
+            },
+            'debug': {
+                'format': '{asctime} {levelname} {message}',
+                'style': '{',
+            },
+            'info': {
+                'format': '{asctime} {levelname} {message}',
+                'style': '{',
+            },
+            'error': {
+                'style': '{',
+                'format': '{asctime} {levelname} {pathname} {message} {exc_info}',
+            },
+            'email': {
+                'style': '{',
+                'format': '{asctime} {levelname} {message}',
+            },
+        },
 }
 
 # celery settings
@@ -218,3 +293,9 @@ CELERY_BEAT_SCHEDULE = {
     },
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': BASE_DIR / 'cache_files',
+    }
+}
