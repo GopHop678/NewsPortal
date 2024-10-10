@@ -1,0 +1,27 @@
+2024-10-09 22:58:54,910 INFO Watching for file changes with StatReloader
+2024-10-09 22:58:56,048 INFO Debug
+2024-10-09 22:59:09,337 INFO C:\Users\ADMIN\Desktop\NewsPortal\NewsPortal\NewsPortal\settings.py changed, reloading.
+2024-10-09 23:01:48,156 INFO Watching for file changes with StatReloader
+2024-10-09 23:01:51,117 INFO Debug
+2024-10-09 23:01:51,129 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:02:10,825 INFO "GET /admin/ HTTP/1.1" 302 0
+2024-10-09 23:02:10,862 INFO "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+2024-10-09 23:02:12,846 INFO "GET /posts/1 HTTP/1.1" 200 1126
+2024-10-09 23:02:13,969 INFO Debug
+2024-10-09 23:02:13,970 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:02:28,421 INFO C:\Users\ADMIN\Desktop\NewsPortal\NewsPortal\NewsPortal\settings.py changed, reloading.
+2024-10-09 23:02:29,551 INFO Watching for file changes with StatReloader
+2024-10-09 23:02:40,050 INFO Debug
+2024-10-09 23:02:40,061 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:02:43,906 INFO "GET /posts/1 HTTP/1.1" 200 1126
+2024-10-09 23:02:44,864 INFO Debug
+2024-10-09 23:02:44,865 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:03:02,791 INFO C:\Users\ADMIN\Desktop\NewsPortal\NewsPortal\NewsPortal\settings.py changed, reloading.
+2024-10-09 23:10:56,055 INFO Watching for file changes with StatReloader
+2024-10-09 23:10:57,232 INFO Debug
+2024-10-09 23:10:57,243 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:12:00,550 INFO C:\Users\ADMIN\Desktop\NewsPortal\NewsPortal\NewsPortal\settings.py changed, reloading.
+2024-10-09 23:12:01,673 INFO Watching for file changes with StatReloader
+2024-10-09 23:12:03,721 INFO Debug
+2024-10-09 23:12:03,734 INFO "GET / HTTP/1.1" 200 969
+2024-10-09 23:12:51,644 INFO C:\Users\ADMIN\Desktop\NewsPortal\NewsPortal\news\views.py changed, reloading.
